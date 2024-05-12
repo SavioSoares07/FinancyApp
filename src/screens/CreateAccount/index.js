@@ -4,7 +4,7 @@ import ImgMain from "../../../assets/register-img.png";
 import { TextInput } from "react-native-paper";
 import { useState } from "react";
 
-export function CreateAccount() {
+export function CreateAccount({ navigation }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,8 +51,13 @@ export function CreateAccount() {
       </View>
 
       <View style={Styles.ContainerButtons}>
-        <TouchableHighlight style={Styles.BtnSingIn}>
-          <Text style={Styles.btnText}>Sign In</Text>
+        <TouchableHighlight
+          style={Styles.BtnSingIn}
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          <Text style={Styles.btnText}>Sign Up</Text>
         </TouchableHighlight>
       </View>
       <TouchableHighlight style={Styles.btnSingContainer}>

@@ -5,7 +5,7 @@ import { TextInput } from "react-native-paper";
 import { useState } from "react";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
-export function Login() {
+export function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -33,7 +33,12 @@ export function Login() {
         />
       </View>
       <View style={Styles.ContainerBtnForgetPassword}>
-        <TouchableHighlight style={Styles.btnForget}>
+        <TouchableHighlight
+          style={Styles.btnForget}
+          onPress={() => {
+            navigation.navigate("ForgotPassword");
+          }}
+        >
           <Text style={Styles.btnTextForget}>Forgot password?</Text>
         </TouchableHighlight>
       </View>
@@ -44,7 +49,14 @@ export function Login() {
 
         <TouchableHighlight style={Styles.btnSingContainer}>
           <View style={Styles.ContainerTextBtn}>
-            <Text style={Styles.textAccount}>Don’t have Account?</Text>
+            <Text
+              style={Styles.textAccount}
+              onPress={() => {
+                navigation.navigate("SingUp");
+              }}
+            >
+              Don’t have Account?
+            </Text>
             <Text
               style={Styles.textSing}
               onPress={() => navigation.navigate("Login")}
