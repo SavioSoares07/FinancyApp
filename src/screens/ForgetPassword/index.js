@@ -1,6 +1,7 @@
 import { Image, TouchableHighlight, View } from "react-native";
 import { Text, TextInput } from "react-native-paper";
 import ImgMain from "../../../assets/Forgot-img.png";
+
 import { useState } from "react";
 import { Styles } from "./style";
 
@@ -25,7 +26,7 @@ export function ForgotPassword({ navigation }) {
 
       <TouchableHighlight
         style={Styles.btnPrimary}
-        onPress={() => navigation.navigate("SingUp")}
+        onPress={() => navigation.navigate("ForgotLink")}
       >
         <Text style={Styles.BtnText}>Send link</Text>
       </TouchableHighlight>

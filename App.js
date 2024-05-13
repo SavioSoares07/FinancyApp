@@ -6,6 +6,7 @@ import { Login } from "./src/screens/Login";
 import { ForgotPassword } from "./src/screens/ForgetPassword";
 import { CreateAccount } from "./src/screens/CreateAccount";
 import { PaperProvider } from "react-native-paper";
+import { ForgotLink } from "./src/screens/ForgetLink";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ const App = () => {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SingUp" component={CreateAccount} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+          <Stack.Screen name="ForgotLink" component={ForgotLink} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
